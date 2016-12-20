@@ -175,7 +175,7 @@ Rectangle {
                 color: textColor
 
                 function updateTime() {
-                    text = new Date().toLocaleString(Qt.locale("en_US"), "hh:mm")
+                    text = new Date().toLocaleString(Qt.locale("en_US"), "h:mm a")
                 }
             }
 
