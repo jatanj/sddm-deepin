@@ -1,35 +1,28 @@
 import QtQuick 2.2
 
 Canvas {
-    id: avatar
+    id: avatar;
     property string source: ""
-    property color m_strokeStyle: "#ffffff"
+    property color m_strokeStyle: "#55ffffff"
 
     signal clicked()
 
     onSourceChanged: delayPaintTimer.running = true
     onPaint: {
-        var ctx = getContext("2d");
+        var ctx = getContext("2d")
         ctx.beginPath()
         ctx.ellipse(0, 0, width, height)
         ctx.clip()
-        ctx.drawImage(source, 0, 0, width, height)
+        ctx.globalAlpha = 0.5
+        ctx.drawImage(source, 0, 0, 100, 100)
         ctx.strokeStyle = avatar.m_strokeStyle
-        ctx.lineWidth = 6
+        ctx.lineWidth = 1
         ctx.stroke()
     }
 
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
-        onEntered: {
-            m_strokeStyle = "#77ffffff"
-            avatar.requestPaint()
-        }
-        onExited: {
-            m_strokeStyle = "#ffffffff"
-            avatar.requestPaint()
-        }
         onClicked: avatar.clicked()
     }
 

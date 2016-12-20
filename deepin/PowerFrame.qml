@@ -37,6 +37,7 @@ Item {
             Text {
                 text: qsTr("Shutdown")
                 font.pointSize: 15
+                font.family: "Segoe UI Light"
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -67,6 +68,7 @@ Item {
             Text {
                 text: qsTr("Reboot")
                 font.pointSize: 15
+                font.family: "Segoe UI Light"
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -97,6 +99,7 @@ Item {
             Text {
                 text: qsTr("Suspend")
                 font.pointSize: 15
+                font.family: "Segoe UI Light"
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

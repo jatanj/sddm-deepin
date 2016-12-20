@@ -20,7 +20,7 @@ Item {
             passwdInput.echoMode = TextInput.Normal
             passwdInput.text = textConstants.loginFailed
             passwdInput.focus = false
-            passwdInput.color = "#e7b222"
+            passwdInput.color = "#77ffffff"
             glowAnimation.running = false
         }
     }
@@ -38,8 +38,8 @@ Item {
                 topMargin: parent.height / 4
                 horizontalCenter: parent.horizontalCenter
             }
-            width: 130
-            height: 130
+            width: 100
+            height: 100
             source: userFrame.currentIconPath
             onClicked: {
                 root.state = "stateUser"
@@ -52,7 +52,7 @@ Item {
             anchors.fill: userIconRec
             radius: 0
             samples: 17
-            color: "#99ffffff"
+            color: "#55ffffff"
             source: userIconRec
 
             SequentialAnimation on radius {
@@ -75,7 +75,8 @@ Item {
 
             text: userName
             color: textColor
-            font.pointSize: 15
+            font.pointSize: 25
+            font.family: "Inconsolata"
         }
 
         Rectangle {
@@ -83,13 +84,13 @@ Item {
             visible: ! isProcessing
             anchors {
                 top: userNameText.bottom
-                topMargin: 10
+                topMargin: 20
                 horizontalCenter: parent.horizontalCenter
             }
-            width: 300
-            height: 35
-            radius: 3
-            color: "#55000000"
+            width: 225
+            height: 25
+            radius: 0
+            color: "#55ffffff"
 
             TextInput {
                 id: passwdInput
@@ -100,6 +101,7 @@ Item {
                 focus: true
                 color: textColor
                 font.pointSize: 15
+                font.family: "Inconsolata"
                 selectByMouse: true
                 selectionColor: "#a8d6ec"
                 echoMode: TextInput.Password
@@ -135,16 +137,21 @@ Item {
             }
             ImgButton {
                 id: loginButton
-                height: passwdInput.height
                 width: height
+                height: passwdInput.height
+                imageWidth: width / 1.5
+                imageHeight: height / 1.5
+                color: "#55000000"
+                hoverColor: "#77000000"
+                pressColor: "#aa000000"
+                border.width: 1
+                border.color: "#ffffff"
+                radius: 0
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
                 }
-
                 normalImg: "icons/login_normal.png"
-                hoverImg: "icons/login_normal.png"
-                pressImg: "icons/login_press.png"
                 onClicked: {
                     glowAnimation.running = true
                     sddm.login(userNameText.text, passwdInput.text, sessionIndex)

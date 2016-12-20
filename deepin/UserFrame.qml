@@ -78,6 +78,7 @@ Item {
                 width: 100
                 height: 100
                 source: icon
+                smooth: true
                 onClicked: item.select()
             }
 
@@ -88,7 +89,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: name
-                font.pointSize: 15
+                font.pointSize: 25
+                font.family: "Inconsolata"
                 color: "white"
                 wrapMode: Text.WordWrap
             }

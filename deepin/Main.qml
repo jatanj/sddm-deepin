@@ -11,8 +11,8 @@ Rectangle {
     height: 480
     state: "stateLogin"
 
-    readonly property int hMargin: 40
-    readonly property int vMargin: 30
+    readonly property int hMargin: 20
+    readonly property int vMargin: 10
     readonly property int m_powerButtonSize: 40
     readonly property color textColor: "#ffffff"
 
@@ -167,10 +167,11 @@ Rectangle {
                     left: parent.left
                     leftMargin: hMargin
                     bottom: dateText.top
-                    bottomMargin: 5
+                    bottomMargin: 0
                 }
 
-                font.pointSize: 50
+                font.pointSize: 75
+                font.family: "Segoe UI Light"
                 color: textColor
 
                 function updateTime() {
@@ -187,11 +188,12 @@ Rectangle {
                     bottomMargin: vMargin
                 }
 
-                font.pointSize: 18
+                font.pointSize: 35
+                font.family: "Segoe UI"
                 color: textColor
 
                 function updateDate() {
-                    text = new Date().toLocaleString(Qt.locale("en_US"), "yyyy-MM-dd dddd")
+                    text = new Date().toLocaleString(Qt.locale("en_US"), "dddd, MMMM dd")
                 }
             }
 
