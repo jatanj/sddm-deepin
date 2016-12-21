@@ -14,7 +14,14 @@ Rectangle {
     readonly property int hMargin: 20
     readonly property int vMargin: 10
     readonly property int m_powerButtonSize: 40
+
+    readonly property color mainColor: "#55ffffff"
     readonly property color textColor: "#ffffff"
+
+    readonly property string backgroundImagePath: "background.jpg"
+
+    FontLoader { id: fixedFont; source: "fonts/Inconsolata.otf" }
+    FontLoader { id: lightFont; name: "Lato Light"; source: "fonts/Lato-Light.otf" }
 
     TextConstants { id: textConstants }
 
@@ -80,7 +87,7 @@ Rectangle {
         Image {
             id: mainFrameBackground
             anchors.fill: parent
-            source: "background.jpg"
+            source: backgroundImagePath
         }
 
         FastBlur {
@@ -171,7 +178,7 @@ Rectangle {
                 }
 
                 font.pointSize: 75
-                font.family: "Segoe UI Light"
+                font.family: lightFont.name
                 color: textColor
 
                 function updateTime() {
@@ -189,7 +196,7 @@ Rectangle {
                 }
 
                 font.pointSize: 35
-                font.family: "Segoe UI"
+                font.family: lightFont.name
                 color: textColor
 
                 function updateDate() {
@@ -215,7 +222,7 @@ Rectangle {
 
         Item {
             id: powerArea
-            visible: ! loginFrame.isProcessing
+            visible: !loginFrame.isProcessing
             anchors {
                 bottom: parent.bottom
                 right: parent.right

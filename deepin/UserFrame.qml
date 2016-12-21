@@ -90,8 +90,8 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 text: name
                 font.pointSize: 25
-                font.family: "Inconsolata"
-                color: "white"
+                font.family: fixedFont.name
+                color: textColor
                 wrapMode: Text.WordWrap
             }
 

@@ -10,6 +10,9 @@ Item {
     property alias input: passwdInput
     property alias button: loginButton
 
+    readonly property color inputTextColor: "#aa000000"
+    readonly property color failTextColor: "#55000000"
+
     Connections {
         target: sddm
         onLoginSucceeded: {
@@ -20,7 +23,7 @@ Item {
             passwdInput.echoMode = TextInput.Normal
             passwdInput.text = textConstants.loginFailed
             passwdInput.focus = false
-            passwdInput.color = "#77ffffff"
+            passwdInput.color = failTextColor
             glowAnimation.running = false
         }
     }
@@ -52,7 +55,7 @@ Item {
             anchors.fill: userIconRec
             radius: 0
             samples: 17
-            color: "#55ffffff"
+            color: mainColor
             source: userIconRec
 
             SequentialAnimation on radius {
@@ -76,7 +79,7 @@ Item {
             text: userName
             color: textColor
             font.pointSize: 25
-            font.family: "Inconsolata"
+            font.family: fixedFont.name
         }
 
         Rectangle {
@@ -90,7 +93,7 @@ Item {
             width: 225
             height: 25
             radius: 0
-            color: "#55ffffff"
+            color: mainColor
 
             TextInput {
                 id: passwdInput
@@ -99,16 +102,16 @@ Item {
                 anchors.rightMargin: 8 + 36
                 clip: true
                 focus: true
-                color: textColor
+                color: inputTextColor
                 font.pointSize: 15
-                font.family: "Inconsolata"
+                font.family: fixedFont.name
                 selectByMouse: true
                 selectionColor: "#a8d6ec"
                 echoMode: TextInput.Password
                 verticalAlignment: TextInput.AlignVCenter
                 onFocusChanged: {
                     if (focus) {
-                        color = textColor
+                        color = inputTextColor
                         echoMode = TextInput.Password
                         text = ""
                     }
@@ -142,8 +145,6 @@ Item {
                 imageWidth: width / 1.5
                 imageHeight: height / 1.5
                 color: "#55000000"
-                hoverColor: "#77000000"
-                pressColor: "#aa000000"
                 border.width: 1
                 border.color: "#ffffff"
                 radius: 0
