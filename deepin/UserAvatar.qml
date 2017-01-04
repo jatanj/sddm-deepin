@@ -14,7 +14,7 @@ Canvas {
         ctx.ellipse(0, 0, width, height)
         ctx.clip()
         ctx.globalAlpha = 0.5
-        ctx.drawImage(source, 0, 0, 100, 100)
+        ctx.drawImage(source, 0, 0, width, height)
         ctx.strokeStyle = avatar.m_strokeStyle
         ctx.lineWidth = 1
         ctx.stroke()

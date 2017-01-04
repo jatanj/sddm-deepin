@@ -41,8 +41,8 @@ Item {
                 topMargin: parent.height / 4
                 horizontalCenter: parent.horizontalCenter
             }
-            width: 100
-            height: 100
+            width: parent.width * 0.1
+            height: width
             source: userFrame.currentIconPath
             onClicked: {
                 root.state = "stateUser"
@@ -72,15 +72,17 @@ Item {
             id: userNameText
             anchors {
                 top: userIconRec.bottom
-                topMargin: 10
+                topMargin: 50
                 horizontalCenter: parent.horizontalCenter
             }
 
             text: userName
             color: textColor
-            font.pointSize: 25
-            font.family: fixedFont.name
-        }
+						styleColor: textStyleColor
+						style: Text.Outline
+					  font.pointSize: 25
+					  font.family: fixedFont.name
+					}
 
         Rectangle {
             id: passwdInputRec
@@ -90,8 +92,8 @@ Item {
                 topMargin: 20
                 horizontalCenter: parent.horizontalCenter
             }
-            width: 225
-            height: 25
+            width: parent.width * 0.205
+            height: parent.height * 0.1
             radius: 0
             color: mainColor
 

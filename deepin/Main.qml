@@ -13,10 +13,11 @@ Rectangle {
 
     readonly property int hMargin: 20
     readonly property int vMargin: 10
-    readonly property int m_powerButtonSize: 40
+    readonly property int m_powerButtonSize: width / 25
 
     readonly property color mainColor: "#55ffffff"
     readonly property color textColor: "#ffffff"
+		readonly property color textStyleColor: "#33000000"
 
     readonly property string backgroundImagePath: "background.jpg"
 
