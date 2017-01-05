@@ -92,7 +92,7 @@ Item {
                 topMargin: 20
                 horizontalCenter: parent.horizontalCenter
             }
-            width: parent.width * 0.205
+            width: parent.width * 0.2
             height: parent.height * 0.1
             radius: 0
             color: mainColor

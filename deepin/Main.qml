@@ -57,7 +57,7 @@ Rectangle {
             PropertyChanges { target: powerFrame; opacity: 0}
             PropertyChanges { target: sessionFrame; opacity: 0}
             PropertyChanges { target: userFrame; opacity: 0}
-            PropertyChanges { target: bgBlur; radius: 0}
+            PropertyChanges { target: bgBlur; radius: 10}
         }
 
     ]
@@ -229,7 +229,7 @@ Rectangle {
                 right: parent.right
             }
             width: parent.width / 3
-            height: parent.height / 7
+            height: m_powerButtonSize + 10
 
             Row {
                 spacing: 20
