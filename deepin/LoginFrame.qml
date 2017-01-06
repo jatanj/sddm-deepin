@@ -72,7 +72,7 @@ Item {
             id: userNameText
             anchors {
                 top: userIconRec.bottom
-                topMargin: 50
+                topMargin: 20
                 horizontalCenter: parent.horizontalCenter
             }
 
@@ -89,7 +89,7 @@ Item {
             visible: ! isProcessing
             anchors {
                 top: userNameText.bottom
-                topMargin: 20
+                topMargin: 50
                 horizontalCenter: parent.horizontalCenter
             }
             width: parent.width * 0.2
