@@ -10,8 +10,8 @@ Item {
     property alias input: passwdInput
     property alias button: loginButton
 
-    readonly property color inputTextColor: "#aa000000"
-    readonly property color failTextColor: "#55000000"
+    readonly property color inputTextColor: "#ffffff"
+    readonly property color failTextColor: "#55ffffff"
 
     Connections {
         target: sddm
@@ -89,13 +89,13 @@ Item {
             visible: ! isProcessing
             anchors {
                 top: userNameText.bottom
-                topMargin: 50
+                topMargin: 75
                 horizontalCenter: parent.horizontalCenter
             }
-            width: parent.width * 0.2
-            height: parent.height * 0.1
+            width: parent.width * 0.225
+            height: parent.height * 0.125
             radius: 0
-            color: mainColor
+            color: "#22ffffff"
 
             TextInput {
                 id: passwdInput
@@ -105,7 +105,7 @@ Item {
                 clip: true
                 focus: true
                 color: inputTextColor
-                font.pointSize: 15
+                font.pointSize: 18
                 font.family: fixedFont.name
                 selectByMouse: true
                 selectionColor: "#a8d6ec"
@@ -146,9 +146,6 @@ Item {
                 height: passwdInput.height
                 imageWidth: width / 1.5
                 imageHeight: height / 1.5
-                color: "#55000000"
-                border.width: 1
-                border.color: "#ffffff"
                 radius: 0
                 anchors {
                     right: parent.right
