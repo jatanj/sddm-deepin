@@ -94,8 +94,10 @@ Item {
             }
             width: parent.width * 0.225
             height: parent.height * 0.125
-            radius: 0
-            color: "#22ffffff"
+            radius: 3
+            color: "#660c1720"
+            border.width: 1
+            border.color: "#22000000"
 
             TextInput {
                 id: passwdInput
@@ -104,8 +106,8 @@ Item {
                 anchors.rightMargin: 8 + 36
                 clip: true
                 focus: true
-                color: inputTextColor
-                font.pointSize: 18
+                color: "#ffffff"
+                font.pointSize: 25
                 font.family: fixedFont.name
                 selectByMouse: true
                 selectionColor: "#a8d6ec"
@@ -144,14 +146,15 @@ Item {
                 id: loginButton
                 width: height
                 height: passwdInput.height
-                imageWidth: width / 1.5
-                imageHeight: height / 1.5
+                imageWidth: width
+                imageHeight: height
                 radius: 0
+                opacity: 0.9
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
                 }
-                normalImg: "icons/login_normal.png"
+                normalImg: "icons/angle-right.png"
                 onClicked: {
                     glowAnimation.running = true
                     sddm.login(userNameText.text, passwdInput.text, sessionIndex)
